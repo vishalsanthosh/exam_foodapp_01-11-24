@@ -14,7 +14,9 @@ class _MainScreenListState extends State<MainScreenList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: IconButton(onPressed: (){}, icon: Icon(Icons.list)),
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon: Icon(Icons.list)),
         actions: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -111,18 +113,18 @@ class _MainScreenListState extends State<MainScreenList> {
                   
                          price: Database.myList[index]["price"])));
                     }
-                    ,child: Image.asset(Database.myList[index]["img"],height: 80,width: double.infinity,)),
-                  SizedBox(height: 3,),
+                    ,child: Image.asset(Database.myList[index]["img"],height: 75,width: double.infinity,)),
+                  
                   Text(Database.myList[index]["n1"],style: TextStyle(fontSize: 14),),
-                  SizedBox(height: 3,),
+                
                   Text(Database.myList[index]["n2"],style: TextStyle(color: Colors.grey,fontSize: 12),),
                   
                   Row(
                     children: [
                     
-                      Text("\$ ${Database.myList[index]["price"]}",style: TextStyle(color: Colors.red,fontSize: 18),),
+                      Text("   \$ ${Database.myList[index]["price"]}",style: TextStyle(color: Colors.red,fontSize: 16),),
                       Spacer(),
-                      IconButton(onPressed: (){}, icon: Icon(Icons.add,color: Colors.red,size: 18,))
+                      IconButton(onPressed: (){}, icon: Icon(Icons.add,color: Colors.red,size: 16,))
                     ],
                   )
                 ],

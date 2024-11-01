@@ -22,12 +22,15 @@ class DescriptionScreen extends StatelessWidget {
         ],
       ),
       body: Padding(
+        
         padding: const EdgeInsets.all(8.0),
         child: SingleChildScrollView(
+          
           child: Column(
             
             children: [
               Container(
+                
                 height: 300,
                 width: double.infinity,
               child: Image.asset(imagepath),

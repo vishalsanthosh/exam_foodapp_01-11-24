@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project4/list.dart';
+import 'package:mini_project4/login.dart';
+import 'package:mini_project4/reg.dart';
 
 class LoadingScreen extends StatefulWidget {
   const LoadingScreen({super.key});
@@ -32,7 +35,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
               decoration: BoxDecoration(color: Colors.red,borderRadius: BorderRadius.circular(6)),
               height: 60,
               width: double.infinity,
-              child: Center(child: Text("Sign in",style: TextStyle(color: Colors.white,fontSize: 20),)),
+              child: Center(child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                },
+                child: Text("Sign in",style: TextStyle(color: Colors.white,fontSize: 20),))),
             ),
           ),
           SizedBox(height: 5,),
@@ -41,7 +48,11 @@ class _LoadingScreenState extends State<LoadingScreen> {
             children: [
               Text("Don't have an account?"),
               SizedBox(width: 5,),
-              Text("Sign Up",style: TextStyle(color: Colors.red),)
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>RegistrationScreen()));
+                },
+                child: Text("Sign Up",style: TextStyle(color: Colors.red),))
             ],
           )
         ],
