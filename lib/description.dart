@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DescriptionScreen extends StatelessWidget {
+class DescriptionScreen extends StatefulWidget {
    final String imagepath;
 
   final String name;
@@ -10,7 +10,11 @@ class DescriptionScreen extends StatelessWidget {
   final String price;
   const DescriptionScreen({super.key, required this.imagepath,required this.name,required this.price});
 
+  @override
+  State<DescriptionScreen> createState() => _DescriptionScreenState();
+}
 
+class _DescriptionScreenState extends State<DescriptionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,14 +37,14 @@ class DescriptionScreen extends StatelessWidget {
                 
                 height: 300,
                 width: double.infinity,
-              child: Image.asset(imagepath),
+              child: Image.asset(widget.imagepath),
               ),
               SizedBox(height:5 ,),
               Row(
                 children: [
-                  Text(name,style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
+                  Text(widget.name,style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
                   Spacer(),
-                  Text("\$${price}",style: TextStyle(color: Colors.red,fontSize: 26),)
+                  Text("\$${widget.price}",style: TextStyle(color: Colors.red,fontSize: 26),)
                   
                 ],
                 
